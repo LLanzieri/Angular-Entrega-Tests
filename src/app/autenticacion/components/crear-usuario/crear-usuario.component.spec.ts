@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { By } from '@angular/platform-browser';
 import { CrearUsuarioComponent } from './crear-usuario.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { LoginService } from '../../services/login.service';
@@ -30,6 +31,12 @@ describe('CrearUsuarioComponent', () => {
     fixture = TestBed.createComponent(CrearUsuarioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  it('El texto del título se visualiza correctamente', () => {
+    const value = fixture.debugElement.query(By.css('h1')).nativeElement.innerText;
+
+    expect(value).toEqual('Ingresa tu usuario y contraseña');
   });
 
   it('El componente CrearUsuario se inicializa correctamente', () => {

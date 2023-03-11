@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { By } from '@angular/platform-browser';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { LoginComponent } from './login.component';
 import { LoginService } from '../../services/login.service';
@@ -31,8 +32,29 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
+  it('El texto del título se visualiza correctamente', () => {
+    const value = fixture.debugElement.query(By.css('h1')).nativeElement.innerText;
+
+    expect(value).toEqual('Login');
+  });
+
   it('El componente Login se inicializa correctamente', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Se debe llamar a la función login al hacer click', () => {
+    const fnc = spyOn(component, 'login');
+    const formulario = component.loginForm;
+    const email = formulario.controls["email"];
+    const password = formulario.controls["password"];
+
+    email.setValue('maildeprueba');
+    password.setValue('unacontraseña');
+
+    component.login();
+
+    expect(fnc).toHaveBeenCalled();
+
   });
 
   it('El formulario es inválido al ingresar mal el mail', () => {
@@ -143,7 +165,7 @@ describe('LoginComponent', () => {
     httpClientSpy.get.and.returnValue(of(mockDatos));
 
     service.getUsuarios().subscribe((usuarios: Usuario[]) => {
-      expect(usuarios).toEqual(mockDatos);
+      expect(usuarios).toBe(mockDatos);
       done();
     })
 

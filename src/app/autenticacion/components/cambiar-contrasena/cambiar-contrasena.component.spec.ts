@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { By } from '@angular/platform-browser';
 import { CambiarContrasenaComponent } from './cambiar-contrasena.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { LoginService } from '../../services/login.service';
@@ -30,6 +31,12 @@ describe('CambiarContrasenaComponent', () => {
     fixture = TestBed.createComponent(CambiarContrasenaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  it('El texto del título se visualiza correctamente', () => {
+    const value = fixture.debugElement.query(By.css('h1')).nativeElement.innerText;
+
+    expect(value).toEqual('Ingrese su usuario y nueva contraseña');
   });
 
   it('El componente cambiarContraseña se inicializa correctamente', () => {
