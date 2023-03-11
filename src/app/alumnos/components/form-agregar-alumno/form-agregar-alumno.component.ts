@@ -81,7 +81,7 @@ export class FormAgregarAlumnoComponent implements OnInit, OnDestroy {
         dni: Number(this.formularioAgregarAlumno.controls['dni'].value),
         nombre: this.formularioAgregarAlumno.controls['nombre'].value,
         apellido: this.formularioAgregarAlumno.controls['apellido'].value,
-        edad: this.formularioAgregarAlumno.controls['edad'].value,
+        edad: Number(this.formularioAgregarAlumno.controls['edad'].value),
         nota1: this.formularioAgregarAlumno.controls['nota1'].value,
         nota2: this.formularioAgregarAlumno.controls['nota2'].value,
         cursoAprobado: this.formularioAgregarAlumno.controls['cursoAprobado'].value,

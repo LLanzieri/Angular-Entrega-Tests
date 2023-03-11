@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 import { EditarAlumnoDialogComponent } from './editar-alumno-dialog.component';
 import { SharedModule } from '../../../shared/shared.module';
@@ -11,7 +12,11 @@ describe('EditarAlumnoDialogComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [EditarAlumnoDialogComponent],
       imports: [
-        SharedModule
+        SharedModule,
+
+      ],
+      providers: [
+        MatDialogRef,
       ]
     })
       .compileComponents();

@@ -25,7 +25,7 @@ describe('NavbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('El componente NAVBAR se inicializa correctamente', () => {
     expect(component).toBeTruthy();
   });
 });

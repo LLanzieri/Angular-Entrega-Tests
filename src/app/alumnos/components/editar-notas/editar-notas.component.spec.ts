@@ -29,7 +29,7 @@ describe('EditarNotasComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('El componente EDITARNOTAS se inicia correctamente', () => {
     expect(component).toBeTruthy();
   });
 });

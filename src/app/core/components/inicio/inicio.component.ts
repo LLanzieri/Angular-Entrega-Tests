@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
-import { BehaviorSubject } from 'rxjs';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Sesion } from 'src/app/interfaces/sesion';
 
 @Component({
   selector: 'app-inicio',

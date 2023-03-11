@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AlumnosService } from '../../servicio/alumnos.service';
 import { CalificacionesComponent } from './calificaciones.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SharedModule } from '../../../shared/shared.module';
 
 describe('CalificacionesComponent', () => {
   let component: CalificacionesComponent;
@@ -10,6 +12,10 @@ describe('CalificacionesComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [CalificacionesComponent],
+      imports: [
+        HttpClientTestingModule,
+        SharedModule
+      ],
       providers: [
         AlumnosService
       ]
@@ -21,7 +27,7 @@ describe('CalificacionesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('El componente CALIFICACIONES se crea correctamente', () => {
     expect(component).toBeTruthy();
   });
 });

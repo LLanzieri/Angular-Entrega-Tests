@@ -21,7 +21,7 @@ describe('ToolbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('El componente TOOLBAR se inicializa correctamente', () => {
     expect(component).toBeTruthy();
   });
 });
